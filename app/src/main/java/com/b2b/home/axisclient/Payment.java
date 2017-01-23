@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +36,9 @@ public class Payment extends AppCompatActivity {
                 String amount=amt.getText().toString();
 
                 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" +"1500,"+Encoder.encode(amount,accNumber,IFSCCode,acknowledgement)));
+
+                //Log.i("Number Dialled", String.valueOf(Uri.parse("tel:" +"1500,"+ Encoder.encode(amount,accNumber,IFSCCode,acknowledgement))));
+
                // Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" +"04422730897,"+"500*123456789*123456789*123456789"));
 
                 if (ActivityCompat.checkSelfPermission(Payment.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
