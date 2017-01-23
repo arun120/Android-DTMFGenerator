@@ -24,6 +24,7 @@ public class Payment extends AppCompatActivity {
         final EditText accNum = (EditText) findViewById(R.id.accNum);
         final EditText IFSC = (EditText) findViewById(R.id.IFSC);
         final EditText ack = (EditText) findViewById(R.id.ack);
+        final EditText amt= (EditText) findViewById(R.id.amount);
 
         transfer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,9 +32,10 @@ public class Payment extends AppCompatActivity {
                 String accNumber = accNum.getText().toString();
                 String IFSCCode = IFSC.getText().toString();
                 String acknowledgement = ack.getText().toString();
+                String amount=amt.getText().toString();
 
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" +"1500,"+Encoder.encode(accNumber,IFSCCode,acknowledgement)));
-               // Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" +"04422730897,"+"123456789*123456789*123456789"));
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" +"1500,"+Encoder.encode(amount,accNumber,IFSCCode,acknowledgement)));
+               // Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" +"04422730897,"+"500*123456789*123456789*123456789"));
 
                 if (ActivityCompat.checkSelfPermission(Payment.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling

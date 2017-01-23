@@ -6,7 +6,7 @@ package com.b2b.home.axisclient;
 
 public class Encoder {
 
-    public static  String encode(String num,String IFSC,String ack){
-        return num+"*"+IFSC+"*"+ack;
+    public static  String encode(String amt,String num,String IFSC,String ack){
+        return amt+"*"+num+"*"+IFSC+"*"+ack;
     }
 }
