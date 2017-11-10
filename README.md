@@ -1,6 +1,6 @@
-# AxisHackathon-DTMFGenerator
+# Android-DTMFGenerator
 
-Account holder uses this application to fill up trancation details and send the Generated DTMF Tones to the server app.
+Android App to generate DTMF Tones and send it via Voice Calls
 
 # Application Demo
 
